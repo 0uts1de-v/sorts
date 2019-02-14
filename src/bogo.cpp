@@ -15,19 +15,20 @@ int init_vec(vector<int> &vec){
     return 0;
 }
 
-int insertion_sort(vector<int> &vec){
-    int tmp;
-    for (int i = 0; i < vec.size(); ++i){
-        tmp = vec.at(i);
+int bogo_sort(vector<int> &vec){
+    random_device rd;
+    mt19937 shuffle_engine(rd());
+    while (!is_sorted(vec.begin(), vec.end())){
+        shuffle(vec.begin(), vec.end(), shuffle_engine);
     }
     return 0;
 }
 
 int main(){
-    vector<int> vec(100);
+    vector<int> vec(10);
     init_vec(vec);
     
-    insertion_sort(vec);
+    bogo_sort(vec);
     
     for (int &i : vec){
         cout << i << endl;
