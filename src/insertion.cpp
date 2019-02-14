@@ -16,9 +16,15 @@ int init_vec(vector<int> &vec){
 }
 
 int insertion_sort(vector<int> &vec){
-    int tmp;
+    int j, tmp;
     for (int i = 0; i < vec.size(); ++i){
+        j = i - 1;
         tmp = vec.at(i);
+        while (j >= 0 && vec.at(j) > tmp){
+            vec.at(j + 1) = vec.at(j);
+            --j;
+        }
+        vec.at(j + 1) = tmp;
     }
     return 0;
 }
