@@ -1,4 +1,4 @@
- #include <iostream>
+#include <iostream>
 #include <vector>
 #include <random>
 #include <algorithm>
@@ -15,15 +15,19 @@ int init_vec(vector<int> &vec){
     return 0;
 }
 
+int shaker_sort(vector<int> &vec){
+    
+    return 0;
+}
+
 int main(){
     vector<int> vec(100);
     init_vec(vec);
     
-    
+    shaker_sort(vec);
     
     for (int &i : vec){
         cout << i << endl;
     }
     return 0;
 }
-
