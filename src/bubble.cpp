@@ -25,9 +25,7 @@ int bubble_sort(vector<int> &vec){
                 swapped = true;
             }
         }
-        if (!swapped){
-            break;
-        }
+        if (!swapped) break;
     }
     return 0;
 }
