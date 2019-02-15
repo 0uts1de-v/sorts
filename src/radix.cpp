@@ -15,11 +15,16 @@ int init_vec(vector<int> &vec){
     return 0;
 }
 
+int radix_sort(vector<int> &vec){
+    
+    return 0;
+}
+
 int main(){
     vector<int> vec(100);
     init_vec(vec);
     
-    
+    radix_sort(vec);
     
     for (int &i : vec){
         cout << i << endl;

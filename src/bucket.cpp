@@ -16,15 +16,15 @@ int init_vec(vector<int> &vec){
 }
 
 int bucket_sort(vector<int> &vec){
-    vector<int> bucket(vec.size());
+    vector<int> bucket(*max_element(vec.begin(), vec.end()) + 1);
     for (int i = 0; i < vec.size(); ++i){
         ++bucket.at(vec.at(i));
     }
     int k = 0;
-    for (int i = 0; i < vec.size(); ++i){
+    for (int i = 0; i < bucket.size(); ++i){
         for (int j = 0; j < bucket.at(i); ++j){
-            if (j > 0) ++k;
-            vec.at(i + k) = i;
+            vec.at(k) = i;
+            ++k;
         }
     }
     return 0;
