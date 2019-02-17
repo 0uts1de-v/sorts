@@ -36,7 +36,7 @@ int comb_sort(vector<int> &vec)
             break;
         if (h != 1)
             h /= 1.3;
-        if (h == 9 || h = 10)
+        if (h == 9 || h == 10)
             h = 11;
     }
     return 0;
