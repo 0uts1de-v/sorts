@@ -5,8 +5,10 @@
 
 using namespace std;
 
-int init_vec(vector<int> &vec){
-    for (int i = 0; i < vec.size(); ++i){
+int init_vec(vector<int> &vec)
+{
+    for (int i = 0; i < vec.size(); ++i)
+    {
         vec.at(i) = i;
     }
     random_device rd;
@@ -15,30 +17,38 @@ int init_vec(vector<int> &vec){
     return 0;
 }
 
-int comb_sort(vector<int> &vec){
+int comb_sort(vector<int> &vec)
+{
     int h = vec.size() / 1.3;
     bool swapped;
-    while (true){
+    while (true)
+    {
         swapped = false;
-        for (int i = 0; i + h < vec.size(); ++i){
-            if (vec.at(i) > vec.at(i + h)){
+        for (int i = 0; i + h < vec.size(); ++i)
+        {
+            if (vec.at(i) > vec.at(i + h))
+            {
                 swap(vec.at(i), vec.at(i + h));
                 swapped = true;
             }
         }
-        if (!swapped && h == 1) break;
-        if (h != 1) h /= 1.3;
+        if (!swapped && h == 1)
+            break;
+        if (h != 1)
+            h /= 1.3;
     }
     return 0;
 }
 
-int main(){
+int main()
+{
     vector<int> vec(100);
     init_vec(vec);
-    
+
     comb_sort(vec);
-    
-    for (int &i : vec){
+
+    for (int &i : vec)
+    {
         cout << i << endl;
     }
     return 0;

@@ -5,8 +5,10 @@
 
 using namespace std;
 
-int init_vec(vector<int> &vec){
-    for (int i = 0; i < vec.size(); ++i){
+int init_vec(vector<int> &vec)
+{
+    for (int i = 0; i < vec.size(); ++i)
+    {
         vec.at(i) = i;
     }
     random_device rd;
@@ -15,18 +17,21 @@ int init_vec(vector<int> &vec){
     return 0;
 }
 
-int radix_sort(vector<int> &vec){
-    
+int radix_sort(vector<int> &vec)
+{
+
     return 0;
 }
 
-int main(){
+int main()
+{
     vector<int> vec(100);
     init_vec(vec);
-    
+
     radix_sort(vec);
-    
-    for (int &i : vec){
+
+    for (int &i : vec)
+    {
         cout << i << endl;
     }
     return 0;

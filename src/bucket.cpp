@@ -5,8 +5,10 @@
 
 using namespace std;
 
-int init_vec(vector<int> &vec){
-    for (int i = 0; i < vec.size(); ++i){
+int init_vec(vector<int> &vec)
+{
+    for (int i = 0; i < vec.size(); ++i)
+    {
         vec.at(i) = i;
     }
     random_device rd;
@@ -15,14 +17,18 @@ int init_vec(vector<int> &vec){
     return 0;
 }
 
-int bucket_sort(vector<int> &vec){
+int bucket_sort(vector<int> &vec)
+{
     vector<int> bucket(*max_element(vec.begin(), vec.end()) + 1);
-    for (int i = 0; i < vec.size(); ++i){
+    for (int i = 0; i < vec.size(); ++i)
+    {
         ++bucket.at(vec.at(i));
     }
     int k = 0;
-    for (int i = 0; i < bucket.size(); ++i){
-        for (int j = 0; j < bucket.at(i); ++j){
+    for (int i = 0; i < bucket.size(); ++i)
+    {
+        for (int j = 0; j < bucket.at(i); ++j)
+        {
             vec.at(k) = i;
             ++k;
         }
@@ -30,13 +36,15 @@ int bucket_sort(vector<int> &vec){
     return 0;
 }
 
-int main(){
+int main()
+{
     vector<int> vec(100);
     init_vec(vec);
-    
+
     bucket_sort(vec);
-    
-    for (int &i : vec){
+
+    for (int &i : vec)
+    {
         cout << i << endl;
     }
     return 0;

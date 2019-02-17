@@ -5,8 +5,10 @@
 
 using namespace std;
 
-int init_vec(vector<int> &vec){
-    for (int i = 0; i < vec.size(); ++i){
+int init_vec(vector<int> &vec)
+{
+    for (int i = 0; i < vec.size(); ++i)
+    {
         vec.at(i) = i;
     }
     random_device rd;
@@ -15,25 +17,31 @@ int init_vec(vector<int> &vec){
     return 0;
 }
 
-int selection_sort(vector<int> &vec){
+int selection_sort(vector<int> &vec)
+{
     int min;
-    for (int i = 0; i < vec.size() - 1; ++i){
+    for (int i = 0; i < vec.size() - 1; ++i)
+    {
         min = i;
-        for (int j = i + 1; j < vec.size(); ++j){
-            if (vec.at(j) < vec.at(min)) min = j;
+        for (int j = i + 1; j < vec.size(); ++j)
+        {
+            if (vec.at(j) < vec.at(min))
+                min = j;
         }
         swap(vec.at(i), vec.at(min));
     }
     return 0;
 }
 
-int main(){
+int main()
+{
     vector<int> vec(100);
     init_vec(vec);
-    
+
     selection_sort(vec);
-    
-    for (int &i : vec){
+
+    for (int &i : vec)
+    {
         cout << i << endl;
     }
     return 0;

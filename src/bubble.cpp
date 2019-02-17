@@ -5,8 +5,10 @@
 
 using namespace std;
 
-int init_vec(vector<int> &vec){
-    for (int i = 0; i < vec.size(); ++i){
+int init_vec(vector<int> &vec)
+{
+    for (int i = 0; i < vec.size(); ++i)
+    {
         vec.at(i) = i;
     }
     random_device rd;
@@ -15,28 +17,35 @@ int init_vec(vector<int> &vec){
     return 0;
 }
 
-int bubble_sort(vector<int> &vec){
+int bubble_sort(vector<int> &vec)
+{
     bool swapped;
-    while (true){
+    while (true)
+    {
         swapped = false;
-        for (int i = 0; i < vec.size() - 1; ++i){
-            if (vec.at(i) > vec.at(i + 1)){
+        for (int i = 0; i < vec.size() - 1; ++i)
+        {
+            if (vec.at(i) > vec.at(i + 1))
+            {
                 swap(vec.at(i), vec.at(i + 1));
                 swapped = true;
             }
         }
-        if (!swapped) break;
+        if (!swapped)
+            break;
     }
     return 0;
 }
 
-int main(){
+int main()
+{
     vector<int> vec(100);
     init_vec(vec);
-    
+
     bubble_sort(vec);
-    
-    for (int &i : vec){
+
+    for (int &i : vec)
+    {
         cout << i << endl;
     }
     return 0;
